@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Bassem Faris Badea, Electronics & Communications Engineer specializing in Robotics, IoT, and Analog Design.">
-    <meta name="keywords" content="Electronics Engineer, Robotics, IoT, Embedded Systems, Flutter, Bassem Faris Badea">
-    <meta name="author" content="Bassem Faris Badea">
-    <meta property="og:title" content="Bassem Faris Badea - Engineering Portfolio">
-    <meta property="og:description" content="Explore projects in robotics, IoT, and embedded systems by Bassem Faris Badea.">
-    <meta property="og:image" content="https://github.com/bassemfaris2020.png?size=320">
-    <meta property="og:url" content="https://bassemfaris2020.github.io">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>Bassem Faris Badea - Engineering Portfolio</title>
+    <title>Bassem Faris Badea - Electronics & Robotics Engineer</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://unpkg.com/lucide@latest" data-inject-svg="true"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+        
+        /* Custom scrollbar */
         body::-webkit-scrollbar {
             width: 8px;
         }
@@ -29,10 +28,25 @@
             background-color: #0d9488;
             border-radius: 4px;
         }
+        
+        /* Gradient animation for hero */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #0d9488, #0891b2, #0e7490, #155e75);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        /* Section headers with improved styling */
         .section-header {
             position: relative;
             padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             display: inline-block;
         }
         .section-header::after {
@@ -42,249 +56,467 @@
             bottom: 0;
             width: 60%;
             height: 4px;
-            background-color: #0d9488;
+            background: linear-gradient(90deg, #0d9488, #0891b2);
             border-radius: 2px;
         }
+        
+        /* Improved project cards */
         .project-card {
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 25px -5px rgba(13, 148, 136, 0.4), 0 5px 10px -5px rgba(13, 148, 136, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -10px rgba(13, 148, 136, 0.3);
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #0d9488, #0891b2);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        /* Skill cards with improved styling */
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px -5px rgba(13, 148, 136, 0.2);
+        }
+        
+        /* Floating animation for hero image */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Improved navigation */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #0d9488;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Contact form styling */
+        .contact-input {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .contact-input:focus {
+            border-color: #0d9488;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        /* Optimized spacing */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Section padding adjustments */
+        .section-padding {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .section-padding {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="#hero" class="text-xl font-bold text-teal-700">Bassem F.</a>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="content-container">
+            <div class="flex justify-between items-center h-16 section-padding">
+                <a href="#hero" class="text-xl font-bold text-teal-700 flex items-center">
+                    <i data-lucide="cpu" class="w-7 h-7 mr-2"></i>
+                    Bassem F.
+                </a>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="#about" class="text-gray-500 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">About</a>
-                    <a href="#skills" class="text-gray-500 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Skills</a>
-                    <a href="#projects" class="text-gray-500 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Projects</a>
-                    <a href="#contact" class="text-gray-500 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">About</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
                 </div>
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="sm:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500" aria-expanded="false" aria-controls="mobile-menu">
+                <button id="mobile-menu-button" class="sm:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+                    <i data-lucide="menu" class="w-7 h-7"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden sm:hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#about" class="block text-gray-700 hover:bg-teal-50 hover:text-teal-700 px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#skills" class="block text-gray-700 hover:bg-teal-50 hover:text-teal-700 px-3 py-2 rounded-md text-base font-medium">Skills</a>
-                <a href="#projects" class="block text-gray-700 hover:bg-teal-50 hover:text-teal-700 px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="#contact" class="block text-gray-700 hover:bg-teal-50 hover:text-teal-700 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            <div class="px-2 pt-2 pb-3 space-y-1 section-padding">
+                <a href="#about" class="block text-gray-700 hover:bg-teal-50 hover:text-teal-700 px-3 py-2 rounded-md text-base font-medium transition duration-150">About</a>
+                <a href="#skills" class="block text-gray-700 hover:bg-teal-50 hover:text-teal-700 px-3 py-2 rounded-md text-base font-medium transition duration-150">Skills</a>
+                <a href="#projects" class="block text-gray-700 hover:bg-teal-50 hover:text-teal-700 px-3 py-2 rounded-md text-base font-medium transition duration-150">Projects</a>
+                <a href="#contact" class="block text-gray-700 hover:bg-teal-50 hover:text-teal-700 px-3 py-2 rounded-md text-base font-medium transition duration-150">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
-
-        <!-- Hero Section -->
-        <section id="hero" class="pt-16 pb-16 md:pt-24 md:pb-24">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+    <!-- Hero Section -->
+    <section id="hero" class="pt-12 pb-12 md:pt-20 md:pb-20 gradient-bg text-white">
+        <div class="content-container section-padding">
+            <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-3/5 space-y-6 text-center md:text-left">
-                    <p class="text-teal-600 text-lg font-semibold tracking-wider uppercase">Electronics & Communications Engineer</p>
-                    <h1 class="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
-                        Hi, I'm <span class="text-teal-700">Bassem Faris Badea</span>
+                    <p class="text-teal-100 text-lg font-medium tracking-wider uppercase">Electronics & Communications Engineer</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+                        Hi, I'm <span class="text-teal-200">Bassem Faris Badea</span>
                     </h1>
-                    <p class="text-2xl text-gray-600">Specialist in Robotics, IoT, and Analog Design</p>
-                    <div class="flex justify-center md:justify-start space-x-4 pt-4">
-                        <a href="https://linkedin.com/in/bassem-faris" target="_blank" rel="noopener noreferrer" class="bg-teal-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-teal-800 transition duration-300 flex items-center">
-                            <i data-lucide="linkedin" class="w-5 h-5 mr-2"></i> LinkedIn
+                    <p class="text-xl text-teal-100">Robotics, IoT, and Analog Design Specialist</p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="https://linkedin.com/in/bassem-faris" target="_blank" class="bg-white text-teal-700 font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-teal-50 transition duration-300 flex items-center justify-center">
+                            <i data-lucide="linkedin" class="w-6 h-6 mr-2"></i> LinkedIn
                         </a>
-                        <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-gray-300 transition duration-300 flex items-center">
-                            <i data-lucide="github" class="w-5 h-5 mr-2"></i> GitHub
+                        <a href="https://github.com/bassemfaris2020" target="_blank" class="bg-teal-800 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-teal-700 transition duration-300 flex items-center justify-center">
+                            <i data-lucide="github" class="w-6 h-6 mr-2"></i> GitHub
                         </a>
                     </div>
                 </div>
                 <div class="md:w-2/5 mt-10 md:mt-0 flex justify-center">
-                    <div class="w-64 h-64 md:w-80 md:h-80 bg-teal-100 rounded-full flex items-center justify-center shadow-xl border-4 border-teal-700 overflow-hidden">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-teal-200/20 rounded-full flex items-center justify-center shadow-xl border-4 border-teal-300/30 overflow-hidden floating">
                         <img 
                             src="https://github.com/bassemfaris2020.png?size=320" 
-                            alt="Bassem Faris Badea Profile Picture" 
+                            alt="Bassem Faris Badea GitHub Profile Picture" 
                             class="w-full h-full object-cover"
-                            loading="lazy"
-                            onerror="this.src='https://placehold.co/320x320/0d9488/ffffff?text=Photo+Error'; this.style.opacity='0.5';"
+                            onerror="this.onerror=null; this.src='https://placehold.co/320x320/0d9488/ffffff?text=Photo+Error'; this.style.opacity='0.5';"
                         >
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <main class="py-8 space-y-16">
         <!-- About Section -->
-        <section id="about" class="py-16 bg-white rounded-xl shadow-lg">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold section-header mx-auto">About Me</h2>
-            </div>
-            <div class="mt-8 text-lg leading-relaxed max-w-4xl mx-auto space-y-4">
-                <p class="text-gray-700 flex items-start"><i data-lucide="user" class="w-5 h-5 text-teal-700 mr-2 flex-shrink-0 mt-1"></i>Results-driven Electronics and Communications Engineer with 4+ years in Embedded Systems, IoT, and Robotics (AI/ML). Specialize in hardware-software integration using C/C++, Flutter/Dart, ESP32, and AVR.</p>
-                <p class="text-gray-700 flex items-start"><i data-lucide="target" class="w-5 h-5 text-teal-700 mr-2 flex-shrink-0 mt-1"></i>Deliver cost-effective solutions, e.g., 36.3% cost reduction in MOMO Robot via ESP32 consolidation, Inverse Kinematics for dynamic movement, and real-time ChatGPT control.</p>
-                <p class="text-gray-700 flex items-start"><i data-lucide="tool" class="w-5 h-5 text-teal-700 mr-2 flex-shrink-0 mt-1"></i>Expert in full-cycle development: analog circuits, PCB design (Proteus, EasyEDA), 3D modeling (SolidWorks), and cross-platform apps.</p>
+        <section id="about" class="py-12 bg-white">
+            <div class="content-container section-padding">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold section-header mx-auto">About Me</h2>
+                </div>
+                <div class="mt-6 text-lg leading-relaxed max-w-4xl mx-auto">
+                    <p class="text-gray-700">A results-driven Electronics and Communications Engineer with <strong class="text-teal-700">4+ years</strong> of hands-on experience in <strong class="text-teal-700">Embedded Systems</strong>, <strong class="text-teal-700">IoT Integration</strong>, and <strong class="text-teal-700">Robotics (AI/ML)</strong>. I specialize in bridging hardware and software development, utilizing C/C++, Flutter/Dart, and advanced microcontroller platforms like ESP32 and AVR.</p>
+
+                    <p class="mt-4 text-gray-700">My focus is on delivering <strong class="text-teal-700">quantifiable, cost-effective solutions</strong>. This is demonstrated by my success in achieving a <strong class="text-teal-700">36.3% cost reduction</strong> in robotic manufacturing (MOMO Robot) and implementing complex solutions like <strong class="text-teal-700">Inverse Kinematics</strong> for dynamic robot movement and <strong class="text-teal-700">real-time ChatGPT control</strong>.</p>
+                    
+                    <p class="mt-4 text-gray-700">Proficient in full-cycle product development—from analog circuit design and PCB tools (Proteus, EasyEDA) to 3D modeling (SolidWorks) and cross-platform mobile application development.</p>
+                </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-16">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold section-header mx-auto">Core Technical Expertise</h2>
-            </div>
-            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
-                    <i data-lucide="cpu" class="w-10 h-10 text-teal-700 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Embedded Systems</h3>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1">
-                        <li><strong>Platforms:</strong> ESP32, Arduino, AVR</li>
-                        <li><strong>Languages:</strong> C/C++, Assembly, MicroPython</li>
-                        <li><strong>Protocols:</strong> I2C, SPI, UART, GSM/GPS</li>
-                    </ul>
+        <section id="skills" class="py-12">
+            <div class="content-container section-padding">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold section-header mx-auto">Core Technical Expertise</h2>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
-                    <i data-lucide="brain" class="w-10 h-10 text-teal-700 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Robotics & AI/IoT</h3>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1">
-                        <li><strong>Algorithms:</strong> Inverse Kinematics</li>
-                        <li><strong>Integration:</strong> ChatGPT, Object Classification</li>
-                        <li><strong>Tools:</strong> PCA9685, 3D CAD/Printing</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
-                    <i data-lucide="circuit-board" class="w-10 h-10 text-teal-700 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Electronics & PCB Design</h3>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1">
-                        <li><strong>Tools:</strong> Proteus, EasyEDA, Multisim</li>
-                        <li><strong>Circuits:</strong> Analog Design, Op-Amps, 555 Timer</li>
-                        <li><strong>Components:</strong> H-Bridge, Load Cells, EEPROM</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
-                    <i data-lucide="smartphone" class="w-10 h-10 text-teal-700 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile & App Dev</h3>
-                    <ul class="text-gray-600 list-disc list-inside space-y-1">
-                        <li><strong>Frameworks:</strong> Flutter, Dart</li>
-                        <li><strong>Skills:</strong> Responsive UI, Real-Time Monitoring</li>
-                        <li><strong>APIs:</strong> RESTful, State Management</li>
-                    </ul>
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Skill Card 1: Embedded Systems -->
+                    <div class="skill-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <div class="flex items-center justify-center w-16 h-16 bg-teal-100 rounded-lg mb-4 mx-auto">
+                            <i data-lucide="cpu" class="w-8 h-8 text-teal-700"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Embedded Systems</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Platforms:</strong> ESP32, Arduino, AVR</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Languages:</strong> C/C++, Assembly, MicroPython</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Protocols:</strong> I2C, SPI, UART, GSM/GPS</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Card 2: Robotics & AI -->
+                    <div class="skill-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <div class="flex items-center justify-center w-16 h-16 bg-teal-100 rounded-lg mb-4 mx-auto">
+                            <i data-lucide="brain" class="w-8 h-8 text-teal-700"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Robotics & AI/IoT</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Algorithms:</strong> Inverse Kinematics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Integration:</strong> ChatGPT, Object Classification</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Tools:</strong> PCA9685, 3D CAD/Printing</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Card 3: Electronics Design -->
+                    <div class="skill-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <div class="flex items-center justify-center w-16 h-16 bg-teal-100 rounded-lg mb-4 mx-auto">
+                            <i data-lucide="circuit-board" class="w-8 h-8 text-teal-700"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Electronics & PCB Design</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Tools:</strong> Proteus, EasyEDA, Multisim</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Circuits:</strong> Analog Design, Op-Amps, 555 Timer</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Components:</strong> H-Bridge, Load Cells, EEPROM</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Card 4: Software/Mobile -->
+                    <div class="skill-card bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <div class="flex items-center justify-center w-16 h-16 bg-teal-100 rounded-lg mb-4 mx-auto">
+                            <i data-lucide="smartphone" class="w-8 h-8 text-teal-700"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Mobile & App Dev</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Frameworks:</strong> Flutter, Dart</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Skills:</strong> Responsive UI, Real-Time Monitoring</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-teal-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>APIs:</strong> RESTful, State Management</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-16 bg-white rounded-xl shadow-lg">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold section-header mx-auto">Featured Projects</h2>
-                <p class="mt-4 text-gray-600 text-lg">Key projects in Robotics, Embedded Systems, and Analog Design.</p>
-            </div>
-            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="bot" class="w-5 h-5 mr-2"></i> MOMO Robot (AI Control)</h3>
-                    <p class="text-sm text-gray-500 mb-4">Embedded Robotics | Ezz Company</p>
-                    <p class="text-gray-700 mb-3">Integrated ChatGPT for real-time ESP32 head control; achieved 36.3% cost reduction by merging modules.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">ESP32</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">ChatGPT</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">36.3% Cost Reduction</span>
-                    </div>
-                </a>
-                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="footprints" class="w-5 h-5 mr-2"></i> SpotMicro Quadruped</h3>
-                    <p class="text-sm text-gray-500 mb-4">Embedded Robotics | Next Creative</p>
-                    <p class="text-gray-700 mb-3">Cost-efficient design with ESP32 AI Cam and Inverse Kinematics for leg movement; 22.2% cost reduction.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Inverse Kinematics</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">ESP32 AI</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">3D Printing</span>
-                    </div>
-                </a>
-                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="thermometer" class="w-5 h-5 mr-2"></i> Temp Control Circuit</h3>
-                    <p class="text-sm text-gray-500 mb-4">Analog Circuit Design | Cost Optimization</p>
-                    <p class="text-gray-700 mb-3">Robust regulator using Op-Amps and 555 Timer; 50% manufacturing cost reduction via component minimization.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Analog Design</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">50% Cost Reduction</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Op-Amps</span>
-                    </div>
-                </a>
-                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="tablet-smartphone" class="w-5 h-5 mr-2"></i> JULI Robot Control App</h3>
-                    <p class="text-sm text-gray-500 mb-4">Mobile Development | Flutter</p>
-                    <p class="text-gray-700 mb-3">Flutter-based tablet UI for JULI Robot: responsive design, video instructions, real-time multi-motor control.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flutter/Dart</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Responsive UI</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">IoT Control</span>
-                    </div>
-                </a>
-                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="recycle" class="w-5 h-5 mr-2"></i> Smart Can Crusher</h3>
-                    <p class="text-sm text-gray-500 mb-4">Embedded Systems | Classification</p>
-                    <p class="text-gray-700 mb-3">Arduino Nano system for metal classification and crushing; relays for AC motor, non-blocking real-time monitoring.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Arduino Nano</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Object Classification</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Relay Control</span>
-                    </div>
-                </a>
-                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
-                    <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="shield-check" class="w-5 h-5 mr-2"></i> Smart Safety System</h3>
-                    <p class="text-sm text-gray-500 mb-4">Graduation Project | GSM/GPS</p>
-                    <p class="text-gray-700 mb-3">Sensors (piezo, alcohol, humidity) with GPS/GSM for impact detection, safety checks, and emergency alerts to app.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">GPS/GSM</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Mobile Monitoring</span>
-                        <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Sensor Integration</span>
-                    </div>
-                </a>
-            </div>
-            <div class="text-center mt-12">
-                <p class="text-gray-600">Explore 15+ projects, including Smart Potato Sorting Machine and Japanese Learning App, on GitHub.</p>
+        <section id="projects" class="py-12 bg-white">
+            <div class="content-container section-padding">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold section-header mx-auto">Featured Projects</h2>
+                    <p class="mt-3 text-gray-600 text-lg">Highlighting key projects in Robotics, Embedded Systems, and Analog Design.</p>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Project 1: MOMO Robot (AI Control) -->
+                    <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center w-12 h-12 bg-teal-100 rounded-lg mr-3">
+                                <i data-lucide="bot" class="w-7 h-7 text-teal-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-teal-700">MOMO Robot (AI Control)</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Embedded Robotics | Ezz Company</p>
+                        <p class="text-gray-700 mb-3">Integrated <strong>ChatGPT</strong> for real-time head control via ESP32. Achieved a critical <strong>36.3% cost reduction</strong> by consolidating Arduino Uno/ESP8266 modules into a single ESP32.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">ESP32</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">ChatGPT</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">36.3% Cost Reduction</span>
+                        </div>
+                    </a>
+
+                    <!-- Project 2: SpotMicro Robot (Inverse Kinematics) -->
+                    <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center w-12 h-12 bg-teal-100 rounded-lg mr-3">
+                                <i data-lucide="footprints" class="w-7 h-7 text-teal-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-teal-700">SpotMicro Quadruped</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Embedded Robotics | Next Creative</p>
+                        <p class="text-gray-700 mb-3">Designed cost-efficient quadruped robot using <strong>ESP32 AI Cam</strong>. Implemented <strong>Inverse Kinematics</strong> algorithms for dynamic leg movement. Reduced manufacturing costs by <strong>22.2%</strong>.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Inverse Kinematics</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">ESP32 AI</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">3D Printing</span>
+                        </div>
+                    </a>
+
+                    <!-- Project 3: Hair Straightener Circuit (Analog Design) -->
+                    <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center w-12 h-12 bg-teal-100 rounded-lg mr-3">
+                                <i data-lucide="thermometer" class="w-7 h-7 text-teal-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-teal-700">Temp Control Circuit</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Analog Circuit Design | Cost Optimization</p>
+                        <p class="text-gray-700 mb-3">Engineered a robust temperature regulator using <strong>Op-Amps</strong> and a <strong>555 Timer</strong>. Achieved a massive <strong>50% reduction in manufacturing costs</strong> through component minimization.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Analog Design</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">50% Cost Reduction</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Op-Amps</span>
+                        </div>
+                    </a>
+
+                    <!-- Project 4: Juli Robot App (Flutter/IoT) -->
+                    <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center w-12 h-12 bg-teal-100 rounded-lg mr-3">
+                                <i data-lucide="tablet-smartphone" class="w-7 h-7 text-teal-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-teal-700">JULI Robot Control App</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Mobile Development | Flutter</p>
+                        <p class="text-gray-700 mb-3">Developed the <strong>Flutter-based tablet UI</strong> for the JULI Robot Assistant. Features responsive design, video-based instructions, and real-time control interface for multi-motor system.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flutter/Dart</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Responsive UI</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">IoT Control</span>
+                        </div>
+                    </a>
+
+                    <!-- Project 5: Smart Can Crusher (IoT/Classification) -->
+                    <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center w-12 h-12 bg-teal-100 rounded-lg mr-3">
+                                <i data-lucide="recycle" class="w-7 h-7 text-teal-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-teal-700">Smart Can Crusher</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Embedded Systems | Classification</p>
+                        <p class="text-gray-700 mb-3">Automated system (Arduino Nano) for <strong>metal object classification</strong> and crushing. Used relays to activate an AC motor and non-blocking logic for real-time monitoring.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Arduino Nano</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Object Classification</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Relay Control</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 6: Final Year Project (Safety) -->
+                    <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center w-12 h-12 bg-teal-100 rounded-lg mr-3">
+                                <i data-lucide="shield-check" class="w-7 h-7 text-teal-700"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-teal-700">Smart Safety System</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Graduation Project | GSM/GPS</p>
+                        <p class="text-gray-700 mb-3">Integrated piezo, alcohol, and humidity sensors with <strong>GPS/GSM</strong> to detect impacts, prevent unsafe riding, and alert emergency contacts. Data transmitted to mobile app.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">GPS/GSM</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Mobile Monitoring</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Sensor Integration</span>
+                        </div>
+                    </a>
+
+                </div>
+                
+                <div class="text-center mt-10">
+                    <p class="text-gray-600">See all <strong>15+ projects</strong> including the Smart Potato Sorting Machine and Japanese Learning App on my GitHub.</p>
+                    <a href="https://github.com/bassemfaris2020" target="_blank" class="inline-flex items-center mt-3 text-teal-700 font-medium hover:text-teal-800 transition duration-150">
+                        <span>View All Projects</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-1"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold section-header mx-auto">Get in Touch</h2>
-                <p class="mt-4 text-gray-600 text-lg">Seeking roles in Embedded Systems and Robotics. Let's connect!</p>
-            </div>
-            <div class="mt-12 max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-700">
-                <div class="space-y-6">
-                    <div class="flex items-center space-x-4">
-                        <i data-lucide="mail" class="w-6 h-6 text-teal-700"></i>
-                        <a href="mailto:bassem.faris2020@gmail.com" class="text-lg text-gray-700 hover:text-teal-700 transition">bassem.faris2020@gmail.com</a>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i data-lucide="phone" class="w-6 h-6 text-teal-700"></i>
-                        <a href="tel:+201220852656" class="text-lg text-gray-700 hover:text-teal-700 transition">+201220852656</a>
-                    </div>
+        <section id="contact" class="py-12">
+            <div class="content-container section-padding">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold section-header mx-auto">Get in Touch</h2>
+                    <p class="mt-3 text-gray-600 text-lg">I'm actively seeking roles in Embedded Systems and Robotics. Let's connect!</p>
                 </div>
-                <div class="mt-8 pt-6 border-t border-gray-200">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-4">Connect Online</h4>
-                    <div class="flex space-x-6 justify-center">
-                        <a href="https://bassemfaris2020.github.io" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-700 transition duration-300">
-                            <span class="sr-only">Website</span>
-                            <i data-lucide="globe" class="w-8 h-8"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/bassem-faris" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-700 transition duration-300">
-                            <span class="sr-only">LinkedIn</span>
-                            <i data-lucide="linkedin" class="w-8 h-8"></i>
-                        </a>
-                        <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-700 transition duration-300">
-                            <span class="sr-only">GitHub</span>
-                            <i data-lucide="github" class="w-8 h-8"></i>
-                        </a>
-                        <a href="https://youtube.com/@BFnotes" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-700 transition duration-300">
-                            <span class="sr-only">YouTube</span>
-                            <i data-lucide="youtube" class="w-8 h-8"></i>
-                        </a>
+                
+                <div class="mt-10 max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-700">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center justify-center w-12 h-12 bg-teal-100 rounded-lg">
+                                <i data-lucide="mail" class="w-7 h-7 text-teal-700"></i>
+                            </div>
+                            <span class="text-lg text-gray-700">bassem.faris2020@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center justify-center w-12 h-12 bg-teal-100 rounded-lg">
+                                <i data-lucide="phone" class="w-7 h-7 text-teal-700"></i>
+                            </div>
+                            <span class="text-lg text-gray-700">+201220852656</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">Connect Online</h4>
+                        <div class="flex space-x-6 justify-center md:justify-start">
+                            <a href="https://linkedin.com/in/bassem-faris" target="_blank" class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg text-gray-500 hover:bg-teal-100 hover:text-teal-700 transition duration-300">
+                                <i data-lucide="linkedin" class="w-7 h-7"></i>
+                            </a>
+                            <a href="https://github.com/bassemfaris2020" target="_blank" class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg text-gray-500 hover:bg-teal-100 hover:text-teal-700 transition duration-300">
+                                <i data-lucide="github" class="w-7 h-7"></i>
+                            </a>
+                            <a href="https://youtube.com/@BFnotes" target="_blank" class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg text-gray-500 hover:bg-teal-100 hover:text-teal-700 transition duration-300">
+                                <i data-lucide="youtube" class="w-7 h-7"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -292,17 +524,23 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="content-container section-padding text-center">
             <p>&copy; 2025 Bassem Faris Badea. All rights reserved.</p>
+            <p class="mt-2 text-gray-400 text-sm">Electronics & Communications Engineer specializing in Robotics and Embedded Systems</p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top bg-teal-700 text-white p-3 rounded-full shadow-lg hover:bg-teal-800 transition duration-300">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
 
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Mobile menu toggle
+        // Mobile menu toggle logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -310,22 +548,60 @@
             const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
             mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
             mobileMenu.classList.toggle('hidden');
+            
+            // Change icon based on menu state
+            const menuIcon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                menuIcon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
         });
 
-        // Close mobile menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
+        // Hide mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
                 mobileMenuButton.setAttribute('aria-expanded', 'false');
+                const menuIcon = mobileMenuButton.querySelector('i');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
             });
         });
 
-        // Close mobile menu on outside click
-        document.addEventListener('click', (event) => {
-            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.setAttribute('aria-expanded', 'false');
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
             }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
