@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Bassem Faris Badea, Electronics & Communications Engineer specializing in Robotics, IoT, and Analog Design.">
+    <meta name="keywords" content="Electronics Engineer, Robotics, IoT, Embedded Systems, Flutter, Bassem Faris Badea">
+    <meta name="author" content="Bassem Faris Badea">
+    <meta property="og:title" content="Bassem Faris Badea - Engineering Portfolio">
+    <meta property="og:description" content="Explore projects in robotics, IoT, and embedded systems by Bassem Faris Badea.">
+    <meta property="og:image" content="https://github.com/bassemfaris2020.png?size=320">
+    <meta property="og:url" content="https://your-portfolio-url.com"> <!-- Replace with actual URL -->
+    <meta name="twitter:card" content="summary_large_image">
     <title>Bassem Faris Badea - Engineering Portfolio</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons: Added data-inject-svg for more reliable loading -->
-    <script src="https://unpkg.com/lucide@latest" data-inject-svg="true"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
-        /* Custom font import for professional look */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        /* Custom scrollbar for aesthetics */
         body::-webkit-scrollbar {
             width: 8px;
         }
@@ -36,19 +42,19 @@
             bottom: 0;
             width: 60%;
             height: 4px;
-            background-color: #0d9488; /* Teal-700 */
+            background-color: #0d9488;
             border-radius: 2px;
         }
         .project-card {
             transition: all 0.3s ease;
         }
         .project-card:hover {
-            transform: translateY(-6px); /* Slightly more aggressive lift */
+            transform: translateY(-6px);
             box-shadow: 0 15px 25px -5px rgba(13, 148, 136, 0.4), 0 5px 10px -5px rgba(13, 148, 136, 0.1);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
     <!-- Navbar -->
     <nav class="sticky top-0 z-50 bg-white shadow-md">
@@ -61,8 +67,8 @@
                     <a href="#projects" class="text-gray-500 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Projects</a>
                     <a href="#contact" class="text-gray-500 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Contact</a>
                 </div>
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-button" class="sm:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500" aria-expanded="false">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="sm:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="sr-only">Open main menu</span>
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
@@ -81,9 +87,9 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
 
-        <!-- 1. Hero Section -->
+        <!-- Hero Section -->
         <section id="hero" class="pt-16 pb-16 md:pt-24 md:pb-24">
-            <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
                 <div class="md:w-3/5 space-y-6 text-center md:text-left">
                     <p class="text-teal-600 text-lg font-semibold tracking-wider uppercase">Electronics & Communications Engineer</p>
                     <h1 class="text-5xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
@@ -91,50 +97,46 @@
                     </h1>
                     <p class="text-2xl text-gray-600">Robotics, IoT, and Analog Design Specialist</p>
                     <div class="flex justify-center md:justify-start space-x-4 pt-4">
-                        <a href="https://linkedin.com/in/bassem-faris" target="_blank" class="bg-teal-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-teal-800 transition duration-300 flex items-center">
+                        <a href="https://linkedin.com/in/bassem-faris" target="_blank" rel="noopener noreferrer" class="bg-teal-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-teal-800 transition duration-300 flex items-center">
                             <i data-lucide="linkedin" class="w-5 h-5 mr-2"></i> LinkedIn
                         </a>
-                        <a href="https://github.com/bassemfaris2020" target="_blank" class="bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-gray-300 transition duration-300 flex items-center">
+                        <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-gray-300 transition duration-300 flex items-center">
                             <i data-lucide="github" class="w-5 h-5 mr-2"></i> GitHub
                         </a>
                     </div>
                 </div>
                 <div class="md:w-2/5 mt-10 md:mt-0 flex justify-center">
-                    <!-- GitHub Profile Image: Username bassemfaris2020 -->
                     <div class="w-64 h-64 md:w-80 md:h-80 bg-teal-100 rounded-full flex items-center justify-center shadow-xl border-4 border-teal-700 overflow-hidden">
                         <img 
                             src="https://github.com/bassemfaris2020.png?size=320" 
                             alt="Bassem Faris Badea GitHub Profile Picture" 
                             class="w-full h-full object-cover"
-                            onerror="this.onerror=null; this.src='https://placehold.co/320x320/0d9488/ffffff?text=Photo+Error'; this.style.opacity='0.5';"
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/320x320/0d9488/ffffff?text=Photo+Error'; this.style.opacity='0.5';"
                         >
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. About Section -->
+        <!-- About Section -->
         <section id="about" class="py-16 bg-white rounded-xl shadow-lg">
             <div class="text-center">
                 <h2 class="text-4xl font-bold section-header mx-auto">About Me</h2>
             </div>
-            <div class="mt-8 text-lg leading-relaxed max-w-4xl mx-auto">
+            <div class="mt-8 text-lg leading-relaxed max-w-4xl mx-auto space-y-4">
                 <p class="text-gray-700">A results-driven Electronics and Communications Engineer with <strong>4+ years</strong> of hands-on experience in <strong>Embedded Systems</strong>, <strong>IoT Integration</strong>, and <strong>Robotics (AI/ML)</strong>. I specialize in bridging hardware and software development, utilizing C/C++, Flutter/Dart, and advanced microcontroller platforms like ESP32 and AVR.</p>
-
-                <p class="mt-4 text-gray-700">My focus is on delivering <strong>quantifiable, cost-effective solutions</strong>. This is demonstrated by my success in achieving a <strong>36.3\% cost reduction</strong> in robotic manufacturing (MOMO Robot) and implementing complex solutions like <strong>Inverse Kinematics</strong> for dynamic robot movement and <strong>real-time ChatGPT control</strong>.</p>
-                
-                <p class="mt-4 text-gray-700">Proficient in full-cycle product development—from analog circuit design and PCB tools (Proteus, EasyEDA) to 3D modeling (SolidWorks) and cross-platform mobile application development.</p>
+                <p class="text-gray-700">My focus is on delivering <strong>quantifiable, cost-effective solutions</strong>. This is demonstrated by my success in achieving a <strong>36.3\% cost reduction</strong> in robotic manufacturing (MOMO Robot) and implementing complex solutions like <strong>Inverse Kinematics</strong> for dynamic robot movement and <strong>real-time ChatGPT control</strong>.</p>
+                <p class="text-gray-700">Proficient in full-cycle product development—from analog circuit design and PCB tools (Proteus, EasyEDA) to 3D modeling (SolidWorks) and cross-platform mobile application development.</p>
             </div>
         </section>
 
-        <!-- 3. Skills Section -->
+        <!-- Skills Section -->
         <section id="skills" class="py-16">
             <div class="text-center">
                 <h2 class="text-4xl font-bold section-header mx-auto">Core Technical Expertise</h2>
             </div>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <!-- Skill Card 1: Embedded Systems (Changed to 'cpu' for stability) -->
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
                     <i data-lucide="cpu" class="w-10 h-10 text-teal-700 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Embedded Systems</h3>
@@ -144,8 +146,6 @@
                         <li><strong>Protocols:</strong> I2C, SPI, UART, GSM/GPS</li>
                     </ul>
                 </div>
-
-                <!-- Skill Card 2: Robotics & AI -->
                 <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
                     <i data-lucide="brain" class="w-10 h-10 text-teal-700 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Robotics & AI/IoT</h3>
@@ -155,8 +155,6 @@
                         <li><strong>Tools:</strong> PCA9685, 3D CAD/Printing</li>
                     </ul>
                 </div>
-
-                <!-- Skill Card 3: Electronics Design -->
                 <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
                     <i data-lucide="circuit-board" class="w-10 h-10 text-teal-700 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Electronics & PCB Design</h3>
@@ -166,8 +164,6 @@
                         <li><strong>Components:</strong> H-Bridge, Load Cells, EEPROM</li>
                     </ul>
                 </div>
-
-                <!-- Skill Card 4: Software/Mobile -->
                 <div class="bg-white p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl">
                     <i data-lucide="smartphone" class="w-10 h-10 text-teal-700 mb-4"></i>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile & App Dev</h3>
@@ -180,17 +176,14 @@
             </div>
         </section>
 
-        <!-- 4. Projects Section -->
+        <!-- Projects Section -->
         <section id="projects" class="py-16 bg-white rounded-xl shadow-lg">
             <div class="text-center">
                 <h2 class="text-4xl font-bold section-header mx-auto">Featured Projects</h2>
                 <p class="mt-4 text-gray-600 text-lg">Highlighting key projects in Robotics, Embedded Systems, and Analog Design.</p>
             </div>
-
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project 1: MOMO Robot (AI Control) -->
-                <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
                     <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="bot" class="w-5 h-5 mr-2"></i> MOMO Robot (AI Control)</h3>
                     <p class="text-sm text-gray-500 mb-4">Embedded Robotics | Ezz Company</p>
                     <p class="text-gray-700 mb-3">Integrated <strong>ChatGPT</strong> for real-time head control via ESP32. Achieved a critical <strong>36.3\% cost reduction</strong> by consolidating Arduino Uno/ESP8266 modules into a single ESP32.</p>
@@ -200,9 +193,7 @@
                         <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">36.3\% Cost Reduction</span>
                     </div>
                 </a>
-
-                <!-- Project 2: SpotMicro Robot (Inverse Kinematics) -->
-                <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
+                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
                     <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="footprints" class="w-5 h-5 mr-2"></i> SpotMicro Quadruped</h3>
                     <p class="text-sm text-gray-500 mb-4">Embedded Robotics | Next Creative</p>
                     <p class="text-gray-700 mb-3">Designed cost-efficient quadruped robot using <strong>ESP32 AI Cam</strong>. Implemented <strong>Inverse Kinematics</strong> algorithms for dynamic leg movement. Reduced manufacturing costs by <strong>22.2\%</strong>.</p>
@@ -212,9 +203,7 @@
                         <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">3D Printing</span>
                     </div>
                 </a>
-
-                <!-- Project 3: Hair Straightener Circuit (Analog Design) -->
-                <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
+                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
                     <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="thermometer" class="w-5 h-5 mr-2"></i> Temp Control Circuit</h3>
                     <p class="text-sm text-gray-500 mb-4">Analog Circuit Design | Cost Optimization</p>
                     <p class="text-gray-700 mb-3">Engineered a robust temperature regulator using <strong>Op-Amps</strong> and a <strong>555 Timer</strong>. Achieved a massive <strong>50\% reduction in manufacturing costs</strong> through component minimization.</p>
@@ -224,9 +213,7 @@
                         <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Op-Amps</span>
                     </div>
                 </a>
-
-                 <!-- Project 4: Juli Robot App (Flutter/IoT) -->
-                <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
+                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
                     <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="tablet-smartphone" class="w-5 h-5 mr-2"></i> JULI Robot Control App</h3>
                     <p class="text-sm text-gray-500 mb-4">Mobile Development | Flutter</p>
                     <p class="text-gray-700 mb-3">Developed the <strong>Flutter-based tablet UI</strong> for the JULI Robot Assistant. Features responsive design, video-based instructions, and real-time control interface for multi-motor system.</p>
@@ -236,9 +223,7 @@
                         <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">IoT Control</span>
                     </div>
                 </a>
-
-                <!-- Project 5: Smart Can Crusher (IoT/Classification) -->
-                <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
+                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
                     <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="recycle" class="w-5 h-5 mr-2"></i> Smart Can Crusher</h3>
                     <p class="text-sm text-gray-500 mb-4">Embedded Systems | Classification</p>
                     <p class="text-gray-700 mb-3">Automated system (Arduino Nano) for <strong>metal object classification</strong> and crushing. Used relays to activate an AC motor and non-blocking logic for real-time monitoring.</p>
@@ -248,9 +233,7 @@
                         <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Relay Control</span>
                     </div>
                 </a>
-                
-                <!-- Project 6: Final Year Project (Safety) -->
-                <a href="https://github.com/bassemfaris2020" target="_blank" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
+                <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="project-card block p-6 bg-gray-50 rounded-lg shadow-md transition duration-300">
                     <h3 class="text-xl font-bold text-teal-700 mb-2 flex items-center"><i data-lucide="shield-check" class="w-5 h-5 mr-2"></i> Smart Safety System</h3>
                     <p class="text-sm text-gray-500 mb-4">Graduation Project | GSM/GPS</p>
                     <p class="text-gray-700 mb-3">Integrated piezo, alcohol, and humidity sensors with <strong>GPS/GSM</strong> to detect impacts, prevent unsafe riding, and alert emergency contacts. Data transmitted to mobile app.</p>
@@ -260,43 +243,42 @@
                         <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Sensor Integration</span>
                     </div>
                 </a>
-
             </div>
-            
             <div class="text-center mt-12">
                 <p class="text-gray-600">See all <strong>15+ projects</strong> including the Smart Potato Sorting Machine and Japanese Learning App on my GitHub.</p>
             </div>
         </section>
 
-        <!-- 5. Contact Section -->
+        <!-- Contact Section -->
         <section id="contact" class="py-16">
             <div class="text-center">
                 <h2 class="text-4xl font-bold section-header mx-auto">Get in Touch</h2>
                 <p class="mt-4 text-gray-600 text-lg">I'm actively seeking roles in Embedded Systems and Robotics. Let's connect!</p>
             </div>
-            
             <div class="mt-12 max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-700">
                 <div class="space-y-6">
                     <div class="flex items-center space-x-4">
                         <i data-lucide="mail" class="w-6 h-6 text-teal-700"></i>
-                        <span class="text-lg text-gray-700">bassem.faris2020@gmail.com</span>
+                        <a href="mailto:bassem.faris2020@gmail.com" class="text-lg text-gray-700 hover:text-teal-700 transition">bassem.faris2020@gmail.com</a>
                     </div>
                     <div class="flex items-center space-x-4">
                         <i data-lucide="phone" class="w-6 h-6 text-teal-700"></i>
-                        <span class="text-lg text-gray-700">+201220852656</span>
+                        <a href="tel:+201220852656" class="text-lg text-gray-700 hover:text-teal-700 transition">+201220852656</a>
                     </div>
                 </div>
-
                 <div class="mt-8 pt-6 border-t border-gray-200">
                     <h4 class="text-xl font-semibold text-gray-900 mb-4">Connect Online</h4>
-                    <div class="flex space-x-6 justify-center md:justify-start">
-                        <a href="https://linkedin.com/in/bassem-faris" target="_blank" class="text-gray-500 hover:text-teal-700 transition duration-300">
+                    <div class="flex space-x-6 justify-center">
+                        <a href="https://linkedin.com/in/bassem-faris" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-700 transition duration-300">
+                            <span class="sr-only">LinkedIn</span>
                             <i data-lucide="linkedin" class="w-8 h-8"></i>
                         </a>
-                        <a href="https://github.com/bassemfaris2020" target="_blank" class="text-gray-500 hover:text-teal-700 transition duration-300">
+                        <a href="https://github.com/bassemfaris2020" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-700 transition duration-300">
+                            <span class="sr-only">GitHub</span>
                             <i data-lucide="github" class="w-8 h-8"></i>
                         </a>
-                        <a href="https://youtube.com/@BFnotes" target="_blank" class="text-gray-500 hover:text-teal-700 transition duration-300">
+                        <a href="https://youtube.com/@BFnotes" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-700 transition duration-300">
+                            <span class="sr-only">YouTube</span>
                             <i data-lucide="youtube" class="w-8 h-8"></i>
                         </a>
                     </div>
@@ -316,7 +298,7 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Mobile menu toggle logic
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -326,13 +308,20 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Hide mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
                 mobileMenuButton.setAttribute('aria-expanded', 'false');
             });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
         });
     </script>
 </body>
